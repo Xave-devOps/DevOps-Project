@@ -1,0 +1,111 @@
+{
+  "students": [
+    {
+      "studentID": 1,
+      "name": "Alice Johnson"
+    },
+    {
+      "studentID": 2,
+      "name": "Bob Smith"
+    },
+    {
+      "studentID": 3,
+      "name": "Charlie Brown"
+    },
+    {
+      "studentID": 4,
+      "name": "David Lee"
+    }
+  ],
+  "classes": [
+    {
+      "classID": 101,
+      "subject": "Math",
+      "date": "7-11-2024",
+      "tutor": "Mr Ryan Justin"
+    },
+    {
+      "classID": 102,
+      "subject": "Science",
+      "date": "7-11-2024",
+      "tutor": "Mr Yutao Qi"
+    },
+    {
+      "classID": 103,
+      "subject": "English",
+      "date": "7-11-2024",
+      "tutor": "Mr Lim Tan"
+    }
+  ],
+  "enrollment": [
+    {
+      "classID": 1,
+      "studentID": 101
+    },
+    {
+      "classID": 2,
+      "studentID": 102
+    },
+    {
+      "classID": 3,
+      "studentID": 103
+    },
+    {
+      "classID": 4,
+      "studentID": 104
+    },
+    {
+      "classID": 5,
+      "studentID": 105
+    }
+  ],
+  "attendance": [
+    {
+      "attendanceID": 1,
+      "classID": 101,
+      "studentID": 1,
+      "status": "Present",
+      "date": "7-11-2024"
+    },
+    {
+      "attendanceID": 2,
+      "classID": 102,
+      "studentID": 2,
+      "status": "Absent",
+      "date": "7-11-2024"
+    },
+    {
+      "attendanceID": 3,
+      "classID": 103,
+      "studentID": 3,
+      "status": "Late",
+      "date": "7-11-2024"
+    }
+  ],
+  "leaveApplications": [
+    {
+      "applicationID": 1,
+      "studentID": 1,
+      "classID": 101,
+      "leaveDate": "2024-11-10",
+      "reason": "Medical appointment",
+      "status": "Disapproved"
+    },
+    {
+      "applicationID": 2,
+      "studentID": 2,
+      "classID": 102,
+      "leaveDate": "2024-11-12",
+      "reason": "Family event",
+      "status": "Disapproved"
+    },
+    {
+      "applicationID": 3,
+      "studentID": "2",
+      "classID": "101",
+      "leaveDate": "2024-11-05",
+      "reason": "sdfsdfsdfsdf",
+      "status": "Pending"
+    }
+  ]
+}
