@@ -39,24 +39,24 @@
   ],
   "enrollment": [
     {
-      "classID": 1,
-      "studentID": 101
+      "enrolledClassID": 101,
+      "enrolledStudentID": 1
     },
     {
-      "classID": 2,
-      "studentID": 102
+      "enrolledClassID": 102,
+      "enrolledStudentID": 2
     },
     {
-      "classID": 3,
-      "studentID": 103
+      "enrolledClassID": 103,
+      "enrolledStudentID": 3
     },
     {
-      "classID": 4,
-      "studentID": 104
+      "enrolledClassID": 101,
+      "enrolledStudentID": 4
     },
     {
-      "classID": 5,
-      "studentID": 105
+      "enrolledClassID": 102,
+      "enrolledStudentID": 1
     }
   ],
   "attendance": [
@@ -101,8 +101,8 @@
     },
     {
       "applicationID": 3,
-      "studentID": "2",
-      "classID": "101",
+      "studentID": 2,
+      "classID": 101,
       "leaveDate": "2024-11-05",
       "reason": "sdfsdfsdfsdf",
       "status": "Pending"
