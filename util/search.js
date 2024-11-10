@@ -3,9 +3,9 @@ let data; // Global variable to hold the JSON data after loading
 // Function to load JSON data from an external file
 async function loadData() {
     try {
-        const response = await fetch('resources.json');
+        const response = await fetch('data/db.json'); // Updated path to 'data/db.json'
         data = await response.json();
-        console.log('Loaded resources.json')
+        console.log('Loaded db.json');
     } catch (error) {
         console.error('Error loading JSON data:', error);
     }
@@ -17,33 +17,35 @@ function searchStudent() {
         alert("Data is still loading. Please try again in a moment.");
         return;
     }
-    
+
     const input = document.getElementById("searchInput").value.trim().toLowerCase();
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = ""; // Clear previous results
 
-    if (input == ''){
+    if (input === '') {
         alert("No input entered in search!");
         return;
     }
 
-    console.log(input)
+    console.log(input);
     // Find the student by ID or name
-    const student = data.students.find(s => 
+    const student = data.students.find(s =>
         s.studentID.toString() === input || s.name.toLowerCase().includes(input)
     );
-    console.log(student)
+    console.log(student);
 
     // Display the result
     if (student) {
-        const studentClasses = data.enrollment.filter(e => e.studentID === student.studentID)
-            .map(e => data.classes.find(c => c.classID === e.classID))
+        // Find classes the student is enrolled in
+        const studentClasses = data.enrollment
+            .filter(e => e.enrolledStudentID === student.studentID)
+            .map(e => data.classes.find(c => c.classID === e.enrolledClassID))
             .filter(Boolean);
-        
+
         let studentDetails = `<h3>Student Details</h3>`;
         studentDetails += `<p><strong>ID:</strong> ${student.studentID}</p>`;
         studentDetails += `<p><strong>Name:</strong> ${student.name}</p>`;
-        
+
         if (studentClasses.length > 0) {
             studentDetails += `<h4>Classes Enrolled</h4>`;
             studentClasses.forEach(c => {
@@ -60,4 +62,4 @@ function searchStudent() {
 }
 
 // Call loadData to load the data when the page loads
-window.onload = loadData; 
+window.onload = loadData;

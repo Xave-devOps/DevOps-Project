@@ -27,8 +27,8 @@ app.get("/util/search.js", (req, res) => {
 });
 
 // Serve resources.json
-app.get("/resources.json", (req, res) => {
-  res.sendFile(path.join(__dirname, "resources.json"));
+app.get("/data/db.json", (req, res) => {
+  res.sendFile(path.join(__dirname, "data", "db.json"));
 });
 
 // Start the server
