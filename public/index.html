@@ -1,8 +1,28 @@
-<html>
-    <head>
-        <title>DVOPS - Student Management Web App</title>
-    </head>
-    <body>
-        Welcome to my Student Management Application. In this application, teachers will get to mark attendance etc...
-    </body>
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DVOPS - Student Management Web App</title>
+</head>
+<body>
+    <h1>Welcome to the Student Management Application</h1>
+    <p>In this application, teachers can mark attendance, manage students, and handle class information.</p>
+
+    <!-- Form for creating a new student -->
+    <h2>Add a New Student</h2>
+    <form id="createStudentForm">
+        <label for="studentID">Student ID:</label>
+        <input type="number" id="studentID" name="studentID" required>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <button type="submit">Create Student</button>
+    </form>
+
+    <!-- Display response message -->
+    <p id="responseMessage"></p>
+
+    <script src="/js/createStudent.js"></script>
+</body>
+</html>

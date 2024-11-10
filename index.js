@@ -1,19 +1,25 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var app = express();
+const express = require("express");
+const bodyParser = require("body-parser");
+const createStudentRoute = require("./Util/createStudent");
+const app = express();
 const PORT = process.env.PORT || 5050;
-var startPage = "index.html";
+
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("./public"));
+
+// Serve static files from the public folder
+app.use(express.static("public"));
+
+// Use the create student route
+app.use("/", createStudentRoute);
+
+// Default route for the home page
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/" + startPage);
+    res.sendFile(__dirname + "/public/index.html");
 });
-server = app.listen(PORT, function () {
-  const address = server.address();
-  const baseUrl = `http://${
-    address.address == "::" ? "localhost" : address.address
-  }:${address.port}`;
-  console.log(`Student Management System project at: ${baseUrl}`);
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Student Management System is running at http://localhost:${PORT}`);
 });
-module.exports = { app, server };
