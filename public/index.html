@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DVOPS - Student Management Web App</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="css/search.css"> <!-- Link to your CSS file for styling if needed -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('css/wallpaper.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* translucent white */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <h2>Search Student</h2>
-        <input type="text" id="searchInput" placeholder="Enter Student ID or Name">
-        <button onclick="searchStudent()">Search</button>
-        <!--<button>Search</button>-->
-        <div id="result" class="result"></div>
+        <h1>Student Management System</h1>
+        <a href="addstudent.html" class="button">Add Student</a>
+        <a href="leave.html" class="button">Leave Application</a>
+        <a href="search.html" class="button">Search Student</a>
+        <a href="createStudentApp.js" class="button">Student App</a>
     </div>
-
-    <script src="/util/search.js"></script>
 </body>
+
 </html>
