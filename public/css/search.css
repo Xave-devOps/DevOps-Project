@@ -3,7 +3,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url('wallpaper.jpg');
-    /* Add your background image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -94,7 +94,7 @@
       "attendanceID": 1,
       "lessonID": 101,
       "studentID": 1,
-      "status": "Present",
+      "status": "Absent",
       "date": "2024-11-07"
     },
     {

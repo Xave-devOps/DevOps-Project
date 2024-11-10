@@ -6,17 +6,17 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 5050;
-const dbPath = path.join(__dirname, "data/db.json"); 
+const dbPath = path.join(__dirname, "utils/db.json");
 
 // Middleware setup
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public")); 
+app.use(express.static("public"));
 
 // Import leave application routes from leaveapp.js
-const leaveAppRoutes = require('./util/leaveapp');
-app.use('/leave', leaveAppRoutes);
+const leaveAppRoutes = require("./util/leaveapp");
+app.use("/leave", leaveAppRoutes);
 
 // Serve search.js from the util directory
 app.get("/util/search.js", (req, res) => {
@@ -37,13 +37,13 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Endpoint to get attendance for a specific class
+// Endpoint to get attendance for a specific lesson
 app.get("/api/attendance/:lessonID", (req, res) => {
   const lessonID = parseInt(req.params.lessonID, 10);
   const date = req.query.date;
   const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
 
-  // Filter attendance records by lessonID and date
+  // Filter attendance records by lessonID
   const attendanceRecords = db.attendance.filter(
     (record) => record.lessonID === lessonID && record.date === date
   );
@@ -81,7 +81,9 @@ app.put("/api/attendance/:attendanceID", (req, res) => {
 
 // Start the server
 const server = app.listen(PORT, () => {
-  console.log(`Student Management System is running at http://localhost:${PORT}`);
+  console.log(
+    `Student Management System is running at http://localhost:${PORT}`
+  );
 });
 
 module.exports = { app, server };

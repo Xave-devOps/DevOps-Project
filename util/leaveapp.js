@@ -64,7 +64,6 @@ router.get('/get-leave-applications', (req, res) => {
 });
 
 // Route to update the application status
-// Route to update the application status
 router.post('/update-application-status', (req, res) => {
     const { applicationID, status } = req.body;
     const application = leaveApplications.find(app => app.applicationID === parseInt(applicationID));

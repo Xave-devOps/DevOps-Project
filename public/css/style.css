@@ -68,7 +68,7 @@ button {
     transition: background-color 0.3s ease;
     margin-top: 20px;
 }
-/* Position the Update Attendance button at the bottom-right inside the container */
+/* Positions the Update Attendance button at the bottom-right inside the container */
 #updateAttendanceButton {
     position: absolute;
     bottom: 20px;
