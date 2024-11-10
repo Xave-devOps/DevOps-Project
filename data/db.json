@@ -53,10 +53,6 @@
     {
       "enrolledClassID": 101,
       "enrolledStudentID": 4
-    },
-    {
-      "enrolledClassID": 102,
-      "enrolledStudentID": 1
     }
   ],
   "attendance": [
@@ -89,7 +85,7 @@
       "classID": 101,
       "leaveDate": "2024-11-10",
       "reason": "Medical appointment",
-      "status": "Disapproved"
+      "status": "Pending"
     },
     {
       "applicationID": 2,
@@ -97,7 +93,7 @@
       "classID": 102,
       "leaveDate": "2024-11-12",
       "reason": "Family event",
-      "status": "Disapproved"
+      "status": "Pending"
     },
     {
       "applicationID": 3,

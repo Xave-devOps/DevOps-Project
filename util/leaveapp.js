@@ -5,10 +5,10 @@ const path = require('path');
 // Create a router to handle leave application routes
 const router = express.Router();
 
-// Adjust the path to locate db.json in the root project's data folder
+// Path to locate db.json in the root project's data folder
 const dataPath = path.join(__dirname, '..', 'data', 'db.json');
 
-// Load the data from db.json
+// Load the data from db.json initially
 let data;
 try {
     const jsonData = fs.readFileSync(dataPath, 'utf8');
@@ -21,6 +21,19 @@ try {
 
 // Initialize leaveApplications
 let leaveApplications = data.leaveApplications || [];
+
+// Route to serve db.json data
+router.get('/api/data', (req, res) => {
+    // Use dataPath directly here
+    fs.readFile(dataPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error("Error reading data file:", err);
+            res.status(500).send("Error reading data file");
+        } else {
+            res.json(JSON.parse(data));
+        }
+    });
+});
 
 // Route to apply for leave
 router.post('/apply-leave', (req, res) => {
@@ -51,6 +64,7 @@ router.get('/get-leave-applications', (req, res) => {
 });
 
 // Route to update the application status
+// Route to update the application status
 router.post('/update-application-status', (req, res) => {
     const { applicationID, status } = req.body;
     const application = leaveApplications.find(app => app.applicationID === parseInt(applicationID));
@@ -68,5 +82,4 @@ router.post('/update-application-status', (req, res) => {
     }
 });
 
-// Export the router to be used in index.js
 module.exports = router;
