@@ -16,10 +16,19 @@ const leaveAppRoutes = require('./util/leaveapp');
 // Use leave application routes, prefixed with '/leave'
 app.use('/leave', leaveAppRoutes);
 
-
 // Serve the main homepage
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "leave.html"));
+});
+
+// Serve search.js from the util directory
+app.get("/util/search.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "util", "search.js"));
+});
+
+// Serve resources.json
+app.get("/resources.json", (req, res) => {
+  res.sendFile(path.join(__dirname, "resources.json"));
 });
 
 // Start the server
