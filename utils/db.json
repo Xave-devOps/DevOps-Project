@@ -55,12 +55,12 @@
       "enrolledStudentID": 3
     },
     {
-      "classID": 101,
+      "classID": 104,
       "enrolledStudentID": 4
     },
     {
-      "classID": 102,
-      "enrolledStudentID": 1
+      "classID": 105,
+      "enrolledStudentID": 5
     }
   ],
   "leaveApplications": [
@@ -94,56 +94,56 @@
       "attendanceID": 1,
       "lessonID": 101,
       "studentID": 1,
-      "status": "Absent",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 2,
       "lessonID": 101,
       "studentID": 2,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 3,
       "lessonID": 101,
       "studentID": 3,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 4,
       "lessonID": 101,
       "studentID": 4,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 5,
       "lessonID": 102,
       "studentID": 1,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 6,
       "lessonID": 102,
       "studentID": 2,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 7,
       "lessonID": 102,
       "studentID": 3,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 8,
       "lessonID": 102,
       "studentID": 4,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
@@ -157,21 +157,21 @@
       "attendanceID": 10,
       "lessonID": 103,
       "studentID": 2,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 11,
       "lessonID": 103,
       "studentID": 3,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     },
     {
       "attendanceID": 12,
       "lessonID": 103,
       "studentID": 4,
-      "status": "Late",
+      "status": "Present",
       "date": "2024-11-07"
     }
   ]

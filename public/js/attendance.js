@@ -59,3 +59,30 @@ function updateStatus(attendanceID, newStatus) {
     })
     .catch((error) => console.error("Error updating attendance:", error));
 }
+function refreshAttendance() {
+  // Reloads the page to show updated attendance data
+  location.reload();
+}
+function getAttendanceByLesson(req, res) {
+  const lessonID = parseInt(req.params.lessonID, 10);
+  const date = req.query.date;
+  const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
+
+  const attendanceRecords = db.attendance.filter(
+    (record) => record.lessonID === lessonID && record.date === date
+  );
+
+  const attendanceWithNames = attendanceRecords.map((record) => {
+    const student = db.students.find((s) => s.studentID === record.studentID);
+    return {
+      ...record,
+      name: student ? student.name : "Unknown",
+    };
+  });
+
+  res.json(attendanceWithNames);
+}
+function goToHomePage() {
+  // Redirects to the homepage (index.html)
+  window.location.href = "index.html";
+}

@@ -1,4 +1,4 @@
-/* General Styles */
+/* Existing General Styles */
 body {
     display: flex;
     justify-content: center;
@@ -10,15 +10,17 @@ body {
     color: #f5f5f5;
 }
 
-/* Centered container */
+/* Container for Centered Content */
 .container {
+    position: relative; /* Ensures child elements can be absolutely positioned */
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     text-align: center;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #333;
 }
 
 /* Header */
@@ -28,39 +30,32 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Controls for lesson selection and date */
-select, input[type="date"] {
-    font-size: 1.2em;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #3b3b3b;
-    color: #f5f5f5;
+/* Feature Buttons in the Homepage */
+.feature-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* Centering and styling the table */
-#attendanceTable {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 100%;
+/* Individual Feature Button Styling */
+.feature-buttons .button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Table header and cell styling */
-#attendanceTable th, #attendanceTable td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: center;
-    font-size: 1.2em;
-    color: #333;
+.feature-buttons .button:hover {
+    background-color: #0056b3;
 }
 
-#attendanceTable th {
-    background-color: #f4f6f9;
-    color: #333;
-}
-
-/* Optional: Button styling (if you want to add any buttons later) */
+/* Existing Button Styling */
 button {
     padding: 10px 20px;
     font-size: 1em;
@@ -73,7 +68,90 @@ button {
     transition: background-color 0.3s ease;
     margin-top: 20px;
 }
-
+/* Position the Update Attendance button at the bottom-right inside the container */
+#updateAttendanceButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
 button:hover {
     background-color: #0056b3;
+}
+
+/* Update Attendance Button Styling */
+#updateAttendanceButton {
+    position: fixed;
+    bottom: 240px;
+    right: 550px;
+    padding: 12px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#updateAttendanceButton:hover {
+    background-color: #0056b3;
+}
+/* Container styling to increase readability */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffffff; /* Light background for better contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #333; /* Dark text color for better readability */
+}
+
+/* Table styling to enhance text visibility */
+#attendanceTable {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    color: #333; /* Darker text color */
+}
+
+#attendanceTable th,
+#attendanceTable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1em;
+    background-color: #f9f9f9; /* Light background for table cells */
+    color: #333; /* Darker text color */
+}
+
+h1 {
+    color: #333; /* Darker text color for the header */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Styling for form elements like dropdowns and date input */
+select,
+input[type="date"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #ffffff; /* Light background */
+    color: #333; /* Dark text color */
+}
+
+label {
+    color: #333; /* Dark text color for labels */
+    font-weight: bold;
 }
