@@ -102,6 +102,14 @@
       "leaveDate": "2024-11-05",
       "reason": "sdfsdfsdfsdf",
       "status": "Pending"
+    },
+    {
+      "applicationID": 4,
+      "studentID": "1",
+      "classID": "101",
+      "leaveDate": "2024-11-11",
+      "reason": "Medical Issues",
+      "status": "Approved"
     }
   ]
 }
