@@ -18,8 +18,8 @@ const {
   updateAttendanceStatus,
   getAttendanceByLesson,
 } = require("./utils/ResourceUtil");
-app.get("/view-attendance/:id", getAttendanceByLesson);
-app.put("/edit-attendance/:id", updateAttendanceStatus);
+app.get("/view-attendance/:attendance/lessonID", getAttendanceByLesson);
+app.put("/edit-attendance/:attendanceID", updateAttendanceStatus);
 
 // Import leave application routes from leaveapp.js
 const leaveAppRoutes = require("./util/leaveapp");
@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 });
 
 // Endpoint to get attendance for a specific lesson
-app.get("/api/attendance/:lessonID", (req, res) => {
+app.get("/api/view-attendance/:lessonID", (req, res) => {
   const lessonID = parseInt(req.params.lessonID, 10);
   const date = req.query.date;
   const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
@@ -68,7 +68,7 @@ app.get("/api/attendance/:lessonID", (req, res) => {
 });
 
 // Endpoint to update attendance status
-app.put("/api/attendance/:id", (req, res) => {
+app.put("/api/edit-attendance/:attendanceID", (req, res) => {
   const attendanceID = parseInt(req.params.attendanceID, 10);
   const newStatus = req.body.status;
 

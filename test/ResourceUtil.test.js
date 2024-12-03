@@ -21,7 +21,7 @@ describe("Attendance API", () => {
   });
   let attendanceID; // Variable to store the ID of the resource
   // Test Suite for editing resources
-  describe("PUT /api/attendance/:id", () => {
+  describe("PUT /api/edit-attendance/:attendanceID", () => {
     it("should update an existing attendance record", (done) => {
       console.log("Received attendanceID:", attendanceID);
       chai
