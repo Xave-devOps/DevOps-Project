@@ -14,6 +14,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
+const {
+  updateAttendanceStatus,
+  getAttendanceByLesson,
+} = require("./utils/ResourceUtil");
+app.get("/view-attendance/:id", getAttendanceByLesson);
+app.put("/edit-attendance/:id", updateAttendanceStatus);
+
 // Import leave application routes from leaveapp.js
 const leaveAppRoutes = require("./util/leaveapp");
 app.use("/leave", leaveAppRoutes);
@@ -61,7 +68,7 @@ app.get("/api/attendance/:lessonID", (req, res) => {
 });
 
 // Endpoint to update attendance status
-app.put("/api/attendance/:attendanceID", (req, res) => {
+app.put("/api/attendance/:id", (req, res) => {
   const attendanceID = parseInt(req.params.attendanceID, 10);
   const newStatus = req.body.status;
 
@@ -79,11 +86,12 @@ app.put("/api/attendance/:attendanceID", (req, res) => {
   }
 });
 
-// Start the server
-const server = app.listen(PORT, () => {
-  console.log(
-    `Student Management System is running at http://localhost:${PORT}`
-  );
+server = app.listen(PORT, function () {
+  const address = server.address();
+  const baseUrl = `http://${
+    address.address == "::" ? "localhost" : address.address
+  }:${address.port}`;
+  console.log(`DevOps project at: ${baseUrl}`);
 });
 
 module.exports = { app, server };
