@@ -3,9 +3,13 @@
         "text",
         "html"
     ],
-    "include": [
-        "utils/ResourceUtil.js"
+    "include": ["utils/**/*.js"],
+    
+    "exclude": [
+        "test/ResourceUtil.test.js",
+        "node_modules/**"
     ],
+    
     "reportDir": "coverage/backend",
     "branches": 80,
     "lines": 80,

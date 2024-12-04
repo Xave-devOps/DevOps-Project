@@ -4,7 +4,8 @@
   "description": "This is a group project for the DVOPS subject. Group members: Daryl, Hilman, Kenneth, Xave",
   "main": "index.js",
   "scripts": {
-    "backend-test": "nyc --nycrc-path .nycrc-backend mocha"
+    "backend-test": "nyc --nycrc-path .nycrc-backend mocha",
+    "test": "nyc --reporter=text --reporter=html mocha"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,9 @@
     "cors": "^2.8.5",
     "express": "^4.21.0",
     "fs": "^0.0.1-security",
-    "mocha": "^10.8.2",
+    "mocha": "^10.8.2"
+  },
+  "devDependencies": {
     "nyc": "^17.1.0"
   }
 }

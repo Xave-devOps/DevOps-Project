@@ -18,8 +18,9 @@ const {
   updateAttendanceStatus,
   getAttendanceByLesson,
 } = require("./utils/ResourceUtil");
-app.get("/view-attendance/:attendance/lessonID", getAttendanceByLesson);
-app.put("/edit-attendance/:attendanceID", updateAttendanceStatus);
+
+app.get("api/view-attendance/:attendance/lessonID", getAttendanceByLesson);
+app.put("/api/edit-attendance/:attendanceID", updateAttendanceStatus);
 
 // Import leave application routes from leaveapp.js
 const leaveAppRoutes = require("./util/leaveapp");
@@ -44,54 +45,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Endpoint to get attendance for a specific lesson
-app.get("/api/view-attendance/:lessonID", (req, res) => {
-  const lessonID = parseInt(req.params.lessonID, 10);
-  const date = req.query.date;
-  const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
-
-  // Filter attendance records by lessonID
-  const attendanceRecords = db.attendance.filter(
-    (record) => record.lessonID === lessonID && record.date === date
+// Start the server
+const server = app.listen(PORT, () => {
+  console.log(
+    `Student Management System is running at http://localhost:${PORT}`
   );
-
-  // Map attendance records to include student names
-  const attendanceWithNames = attendanceRecords.map((record) => {
-    const student = db.students.find((s) => s.studentID === record.studentID);
-    return {
-      ...record,
-      name: student ? student.name : "Unknown", // Add the student's name or "Unknown" if not found
-    };
-  });
-
-  res.json(attendanceWithNames);
-});
-
-// Endpoint to update attendance status
-app.put("/api/edit-attendance/:attendanceID", (req, res) => {
-  const attendanceID = parseInt(req.params.attendanceID, 10);
-  const newStatus = req.body.status;
-
-  const db = JSON.parse(fs.readFileSync(dbPath, "utf-8"));
-  const attendanceRecord = db.attendance.find(
-    (record) => record.attendanceID === attendanceID
-  );
-
-  if (attendanceRecord) {
-    attendanceRecord.status = newStatus;
-    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), "utf-8");
-    res.json(attendanceRecord);
-  } else {
-    res.status(404).json({ error: "Attendance record not found" });
-  }
-});
-
-server = app.listen(PORT, function () {
-  const address = server.address();
-  const baseUrl = `http://${
-    address.address == "::" ? "localhost" : address.address
-  }:${address.port}`;
-  console.log(`DevOps project at: ${baseUrl}`);
 });
 
 module.exports = { app, server };
