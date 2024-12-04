@@ -1,7 +1,9 @@
+const express = require("express");
 const fs = require("fs").promises; // Use promises API for async file handling
 const path = require("path");
+const router = express.Router();
 
-// Path to your db.json file
+// Path to your db.json filea
 const dbPath = path.join(__dirname, "db.json");
 
 // Utility function to read JSON file asynchronously
@@ -18,16 +20,14 @@ async function readJSON(filename) {
 // Utility function to write JSON data asynchronously
 async function writeJSON(object, filename) {
   try {
-    const db = await readJSON(filename); // Read existing data
-    await fs.writeFile(filename, JSON.stringify(db, null, 2), "utf8"); // Write the updated data
-    return db;
+    await fs.writeFile(filename, JSON.stringify(object, null, 2), "utf8"); // Write the updated data
   } catch (err) {
     console.error("Error writing to the database:", err);
     throw err; // Propagate the error if writing fails
   }
 }
 
-// Get attendance for a specific lesson
+// Get attendance for a specific lesson function
 const getAttendanceByLesson = async (req, res) => {
   const lessonID = parseInt(req.params.lessonID, 10); // Get lessonID from URL params
   const date = req.query.date; // Get date from query parameters
@@ -52,7 +52,7 @@ const getAttendanceByLesson = async (req, res) => {
   }
 };
 
-// Update attendance status
+// Update attendance status function
 const updateAttendanceStatus = async (req, res) => {
   const attendanceID = parseInt(req.params.attendanceID, 10);
   const newStatus = req.body.status;
@@ -87,7 +87,9 @@ const updateAttendanceStatus = async (req, res) => {
       attendanceRecord,
     });
   } catch (err) {
-    return res.status(500).json({ error: "Failed to read or write database" });
+    // Catch file read/write errors and return a 500 status code
+    console.error("Error occurred while reading/writing the database:", err);
+    return res.status(500).json({ error: "Failed to read or write database" }); // Ensure we return 500 in case of error
   }
 };
 
