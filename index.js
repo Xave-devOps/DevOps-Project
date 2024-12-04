@@ -37,7 +37,7 @@ app.get("/data/db.json", (req, res) => {
 });
 
 // Import and use the create student route
-const createStudentRoute = require("./util/createStudent");
+const createStudentRoute = require("./Util/createStudent");
 app.use("/", createStudentRoute);
 
 // Default route to serve the main HTML file
