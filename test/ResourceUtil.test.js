@@ -80,7 +80,7 @@ describe("Attendance API", () => {
         });
     });
     it("should return 400 if the attendanceID is not a valid number", (done) => {
-      const attendanceID = "abc"; // simulate invalid attendanceID
+      const attendanceID = "abc"; // simulate invalid attendanceID  
       const newStatus = "Absent";
 
       chai
