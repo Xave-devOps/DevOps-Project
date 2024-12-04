@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5050;  
 const dbPath = path.join(__dirname, "utils/db.json");
 
 // Middleware setup
@@ -19,7 +19,7 @@ const {
   getAttendanceByLesson,
 } = require("./utils/ResourceUtil");
 
-app.get("api/view-attendance/:attendance/lessonID", getAttendanceByLesson);
+app.get("/api/view-attendance/:lessonID", getAttendanceByLesson);
 app.put("/api/edit-attendance/:attendanceID", updateAttendanceStatus);
 
 // Import leave application routes from leaveapp.js
