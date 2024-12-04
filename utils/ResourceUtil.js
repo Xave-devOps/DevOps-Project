@@ -3,7 +3,12 @@ const fs = require("fs").promises; // Use promises API for async file handling
 const path = require("path");
 const router = express.Router();
 
-// Path to your db.json filea
+// Import the getAttendanceByLesson function from the new controller
+const {
+  getAttendanceByLesson,
+} = require("../controllers/attendanceController");
+
+// Path to your db.json file
 const dbPath = path.join(__dirname, "db.json");
 
 // Utility function to read JSON file asynchronously
@@ -27,35 +32,10 @@ async function writeJSON(object, filename) {
   }
 }
 
-// Get attendance for a specific lesson function
-const getAttendanceByLesson = async (req, res) => {
-  const lessonID = parseInt(req.params.lessonID, 10); // Get lessonID from URL params
-  const date = req.query.date; // Get date from query parameters
-
-  try {
-    const db = await readJSON(dbPath); // Read the database asynchronously
-    const attendanceRecords = db.attendance.filter(
-      (record) => record.lessonID === lessonID && record.date === date
-    );
-
-    const attendanceWithNames = attendanceRecords.map((record) => {
-      const student = db.students.find((s) => s.studentID === record.studentID);
-      return {
-        ...record,
-        name: student ? student.name : "Unknown", // Return the student's name or "Unknown"
-      };
-    });
-
-    res.status(200).json(attendanceWithNames); // Respond with the filtered attendance data
-  } catch (err) {
-    return res.status(500).json({ error: "Failed to read database" });
-  }
-};
-
 // Update attendance status function
 const updateAttendanceStatus = async (req, res) => {
-  const attendanceID = parseInt(req.params.attendanceID, 10);
-  const newStatus = req.body.status;
+  const attendanceID = parseInt(req.params.attendanceID, 10); // Get the attendanceID from URL params
+  const newStatus = req.body.status; // Get the new status from the request body
 
   // Check if attendanceID is a valid number
   if (isNaN(attendanceID)) {
@@ -73,6 +53,7 @@ const updateAttendanceStatus = async (req, res) => {
       (record) => record.attendanceID === attendanceID
     );
 
+    // If no record is found, return a 404 error
     if (!attendanceRecord) {
       return res.status(404).json({ error: "Attendance record not found" });
     }
@@ -87,10 +68,16 @@ const updateAttendanceStatus = async (req, res) => {
       attendanceRecord,
     });
   } catch (err) {
-    // Catch file read/write errors and return a 500 status code
+    // Log the error and return a 500 status code for any other errors (e.g., file read/write errors)
     console.error("Error occurred while reading/writing the database:", err);
-    return res.status(500).json({ error: "Failed to read or write database" }); // Ensure we return 500 in case of error
+    return res.status(500).json({ error: "Failed to read or write database" });
   }
 };
+
+// Route to get attendance for a specific lesson
+router.get("/api/view-attendance/:lessonID", getAttendanceByLesson); // Use the imported function
+
+// Route to update attendance status
+router.put("/api/edit-attendance/:attendanceID", updateAttendanceStatus);
 
 module.exports = { getAttendanceByLesson, updateAttendanceStatus };
