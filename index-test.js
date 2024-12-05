@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
+var startPage = "index.html";
+
 
 const app = express();
 const PORT = process.env.PORT || 5050;
@@ -43,6 +45,10 @@ app.use("/", createStudentRoute);
 // Default route to serve the main HTML file
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/instrumented/" + startPage);
+});
+
+app.get("/coverage", (req, res) => {
+  res.sendFile(path.join(__dirname, "coverage", "index.html")); // Example path for coverage report
 });
 
 // Start the server

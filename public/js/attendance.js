@@ -13,7 +13,7 @@ function loadAttendance() {
     return;
   }
 
-  fetch(`/api/attendance/${lessonID}?date=${date}`)
+  fetch(`/api/view-attendance/${lessonID}?date=${date}`)
     .then((response) => response.json())
     .then((attendance) => {
       const tableBody = document.getElementById("attendanceBody");
@@ -48,7 +48,7 @@ function loadAttendance() {
 
 // Function to update attendance status
 function updateStatus(attendanceID, newStatus) {
-  fetch(`/api/attendance/${attendanceID}`, {
+  fetch(`/api/edit-attendance/${attendanceID}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status: newStatus }),
