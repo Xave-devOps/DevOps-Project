@@ -3,8 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
-var startPage = "index.html";
-
+var startPage = "attendance.html";
 
 const app = express();
 const PORT = process.env.PORT || 5050;
