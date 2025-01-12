@@ -6,13 +6,32 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       require("@cypress/code-coverage/task")(on, config);
+<<<<<<< HEAD
+=======
 
+>>>>>>> final-branch
       on("task", {
         startServer() {
           return new Promise((resolve, reject) => {
             // Check if the server is already running
             if (server) {
               resolve(baseUrl);
+<<<<<<< HEAD
+            }
+            server = spawn("node", ["-r", "nyc", "index-test.js"]);
+            server.stdout.on("data", (data) => {
+              console.log(data.toString()); // Log the output for debugging
+              if (data.toString().includes("Student Management System is running at")) {
+                const baseUrlPrefix = "Student Management System is running at";
+                const startIndex = data.toString().indexOf(baseUrlPrefix);
+                if (startIndex !== -1) {
+                  baseUrl = data
+                    .toString()
+                    .substring(startIndex + baseUrlPrefix.length)
+                    .trim();
+                  resolve(baseUrl);
+                }
+=======
               return;
             }
             server = spawn("node", ["-r", "nyc", "index-test.js"]);
@@ -22,6 +41,7 @@ module.exports = defineConfig({
               if (output.includes("Student Management System is running at")) {
                 baseUrl = "http://localhost:5050/";
                 resolve(baseUrl);
+>>>>>>> final-branch
               }
             });
             server.stderr.on("data", (data) => {
