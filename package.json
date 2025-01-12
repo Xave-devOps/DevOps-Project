@@ -1,7 +1,7 @@
 {
   "name": "resource-mgmt",
   "version": "1.0.0",
-  "description": "This is a reference project for the DVOPS subject.",
+  "description": "This is a group project for the DVOPS subject. Group members: Daryl, Hilman, Kenneth, Xave",
   "main": "index.js",
   "scripts": {
     "backend-test": "nyc --nycrc-path .nycrc-backend mocha",
@@ -17,7 +17,6 @@
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
-
     "cypress": "^13.17.0",
     "express": "^4.21.0",
     "fs": "^0.0.1-security",

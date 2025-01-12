@@ -42,7 +42,7 @@ const createStudentRoute = require("./util/createStudent");
 app.use("/", createStudentRoute);
 
 // Default route to serve the main HTML file
-app.get("/", (req, res) => {;
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/instrumented/" + startPage);
 });
 
