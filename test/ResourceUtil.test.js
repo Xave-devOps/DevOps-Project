@@ -4,7 +4,7 @@ const { app, server } = require("../index");
 const chai = require("chai");
 const chaiHttp = require("chai-http");
 const fs = require("fs");
-const sinon = require("sinon");
+const sinon = require("sinon"); // Retaining the sinon import
 
 chai.use(chaiHttp);
 
@@ -91,6 +91,7 @@ describe("Attendance API", () => {
           done();
         });
     });
+
     it("should return 500 if there is a file read/write error", (done) => {
       const attendanceID = 1; // Assume this is a valid ID in your db.json
 
