@@ -1,6 +1,6 @@
 {
-  "C:\\Users\\ajxia\\OneDrive\\Desktop\\Documents\\DVOPS_Projects\\DVOPS_Project\\DevOps-Project\\public\\js\\attendance.js": {
-    "path": "C:\\Users\\ajxia\\OneDrive\\Desktop\\Documents\\DVOPS_Projects\\DVOPS_Project\\DevOps-Project\\public\\js\\attendance.js",
+  "C:\\Devops folder (no OneDrive)\\DevOps-Project\\public\\js\\attendance.js": {
+    "path": "C:\\Devops folder (no OneDrive)\\DevOps-Project\\public\\js\\attendance.js",
     "statementMap": {
       "0": {
         "start": {
@@ -680,6 +680,6 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2ed4fd6abf72269834cf283a883a33c52e9505e3"
+    "hash": "d13311d46e7f06212a7f5fb3f0b8f85db0080fe4"
   }
 }

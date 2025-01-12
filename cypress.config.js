@@ -12,20 +12,15 @@ module.exports = defineConfig({
             // Check if the server is already running
             if (server) {
               resolve(baseUrl);
+              return;
             }
             server = spawn("node", ["-r", "nyc", "index-test.js"]);
             server.stdout.on("data", (data) => {
-              console.log(data.toString()); // Log the output for debugging
-              if (data.toString().includes("Student Management System is running at")) {
-                const baseUrlPrefix = "Student Management System is running at";
-                const startIndex = data.toString().indexOf(baseUrlPrefix);
-                if (startIndex !== -1) {
-                  baseUrl = data
-                    .toString()
-                    .substring(startIndex + baseUrlPrefix.length)
-                    .trim();
-                  resolve(baseUrl);
-                }
+              const output = data.toString();
+              console.log(output);
+              if (output.includes("Student Management System is running at")) {
+                baseUrl = "http://localhost:5050/";
+                resolve(baseUrl);
               }
             });
             server.stderr.on("data", (data) => {
