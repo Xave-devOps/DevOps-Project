@@ -1,3 +1,4 @@
 {"total": {"lines":{"total":21,"covered":19,"skipped":0,"pct":90.47},"statements":{"total":21,"covered":19,"skipped":0,"pct":90.47},"functions":{"total":11,"covered":9,"skipped":0,"pct":81.81},"branches":{"total":8,"covered":5,"skipped":0,"pct":62.5},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"}}
-,"C:\\Devops folder (no OneDrive)\\DevOps-Project\\public\\js\\attendance.js": {"lines":{"total":21,"covered":19,"skipped":0,"pct":90.47},"functions":{"total":11,"covered":9,"skipped":0,"pct":81.81},"statements":{"total":21,"covered":19,"skipped":0,"pct":90.47},"branches":{"total":8,"covered":5,"skipped":0,"pct":62.5}}
+,"C:\\Users\\ajxia\\OneDrive\\Desktop\\Documents\\DVOPS_Projects\\DVOPS_Project\\DevOps-Project\\public\\js\\attendance.js": {"lines":{"total":21,"covered":19,"skipped":0,"pct":90.47},"functions":{"total":11,"covered":9,"skipped":0,"pct":81.81},"statements":{"total":21,"covered":19,"skipped":0,"pct":90.47},"branches":{"total":8,"covered":5,"skipped":0,"pct":62.5}}
+
 }

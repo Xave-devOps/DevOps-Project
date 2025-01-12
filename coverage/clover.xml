@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736670565490" clover="3.2.0">
-  <project timestamp="1736670565490" name="All files">
+<coverage generated="1736692191665" clover="3.2.0">
+  <project timestamp="1736692191665" name="All files">
     <metrics statements="21" coveredstatements="19" conditionals="8" coveredconditionals="5" methods="11" coveredmethods="9" elements="40" coveredelements="33" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
-    <file name="attendance.js" path="C:\Devops folder (no OneDrive)\DevOps-Project\public\js\attendance.js">
+    <file name="attendance.js" path="C:\Users\ajxia\OneDrive\Desktop\Documents\DVOPS_Projects\DVOPS_Project\DevOps-Project\public\js\attendance.js">
       <metrics statements="21" coveredstatements="19" conditionals="8" coveredconditionals="5" methods="11" coveredmethods="9"/>
       <line num="1" count="5" type="stmt"/>
       <line num="2" count="5" type="stmt"/>
