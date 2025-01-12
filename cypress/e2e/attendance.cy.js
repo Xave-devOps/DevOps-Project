@@ -82,4 +82,18 @@ describe("attendance frontend", () => {
 
     cy.location("pathname").should("contain", "index.html");
   });
+
+  it("should prompt user to select a date if no date is selected", () => {
+    cy.visit(baseUrl);
+    cy.wait(1000);
+    // Select a lesson and date to load attendance
+    cy.get("#lessonSelect", { timeout: 10000 }).should("be.visible"); // Select "Science" as an example
+    cy.get("#lessonSelect").select("Math (101)").should("have.value", "101");
+
+    const date = " "; // Example date
+    cy.get("#dateSelect").then((dropdown) => {
+      dropdown.val(date); // Set the value
+      dropdown.trigger("change"); // Trigger the change event
+    });
+  });
 });

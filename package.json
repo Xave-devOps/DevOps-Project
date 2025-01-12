@@ -6,7 +6,7 @@
   "scripts": {
     "backend-test": "nyc --nycrc-path .nycrc-backend mocha",
     "frontend-instrument": "xcopy public instrumented /I /E /Y & nyc instrument public instrumented",
-    "frontend-test": "rimraf .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run"
+    "frontend-test": "rmdir -r .nyc_output & nyc --nycrc-path .nycrc-frontend cypress run"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "body-parser": "^1.20.3",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
     "express": "^4.21.0",
     "fs": "^0.0.1-security",
     "mocha": "^10.7.3"
