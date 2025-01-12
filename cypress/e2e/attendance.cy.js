@@ -25,6 +25,15 @@ describe("attendance frontend", () => {
       dropdown.trigger("change"); // Trigger the change event
     });
 
+    cy.get("#dateSelect").type(date).should("have.value", date);
+
+    cy.get("#attendanceTable tbody tr")
+      .first()
+      .within(() => {
+        cy.get("select")
+          .select("Present") // Select "Present" as an example
+          .should("have.value", "Present"); // Assert the value is updated to "Present"
+      });
     cy.get("#attendanceTable tbody tr")
       .first()
       .find("td")
