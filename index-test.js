@@ -5,7 +5,6 @@ const path = require("path");
 const cors = require("cors");
 var startPage = "index.html";
 
-
 const app = express();
 const PORT = process.env.PORT || 5050;
 const dbPath = path.join(__dirname, "utils/db.json");
@@ -39,7 +38,7 @@ app.get("/data/db.json", (req, res) => {
 });
 
 // Import and use the create student route
-const createStudentRoute = require("./util/createStudent");
+const createStudentRoute = require("./Util/createStudent");
 app.use("/", createStudentRoute);
 
 // Default route to serve the main HTML file
