@@ -16,13 +16,8 @@ module.exports = defineConfig({
             server = spawn("node", ["-r", "nyc", "index-test.js"]);
             server.stdout.on("data", (data) => {
               console.log(data.toString()); // Log the output for debugging
-              if (
-                data
-                  .toString()
-                  .includes("Student Management System is running at ")
-              ) {
-                const baseUrlPrefix =
-                  "Student Management System is running at ";
+              if (data.toString().includes("Student Management System is running at")) {
+                const baseUrlPrefix = "Student Management System is running at";
                 const startIndex = data.toString().indexOf(baseUrlPrefix);
                 if (startIndex !== -1) {
                   baseUrl = data

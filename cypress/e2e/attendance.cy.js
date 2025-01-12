@@ -78,7 +78,7 @@ describe("attendance frontend", () => {
     // Visit the /admin page
     cy.visit(baseUrl);
 
-    cy.get("#updateAttendance").click();
+    cy.get("#updateAttendance").should("be.visible").click();
 
     cy.location("pathname").should("contain", "index.html");
   });
