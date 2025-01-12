@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -150,17 +150,13 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<<<<<<< HEAD
+
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-=======
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">8x</span>
->>>>>>> parent of 2f03e2d7 (Frontend test working)
+>>>>>>> parent of 70d1cdd7 (Save local changes before merge)
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -176,12 +172,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -189,9 +182,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -221,43 +219,43 @@ function loadAttendance() {
       const tableBody = document.getElementById("attendanceBody");
       tableBody.innerHTML = "";
 &nbsp;
-      attendance.forEach(<span class="fstat-no" title="function not covered" >(r</span>ecord) =&gt; {
-        const row = <span class="cstat-no" title="statement not covered" >document.createElement("tr");</span>
+      attendance.forEach((record) =&gt; {
+        const row = document.createElement("tr");
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        row.innerHTML = `</span>
+        row.innerHTML = `
           &lt;td&gt;${record.studentID}&lt;/td&gt;
           &lt;td&gt;${record.name}&lt;/td&gt;
           &lt;td&gt;${record.status}&lt;/td&gt;
           &lt;td&gt;
             &lt;select onchange="updateStatus(${record.attendanceID}, this.value)"&gt;
               &lt;option value="Present" ${
-                record.status === "Present" ? "selected" : ""
+                record.status === "Present" ? "selected" : <span class="branch-1 cbranch-no" title="branch not covered" >""</span>
               }&gt;Present&lt;/option&gt;
               &lt;option value="Absent" ${
-                record.status === "Absent" ? "selected" : ""
+                record.status === "Absent" ? <span class="branch-0 cbranch-no" title="branch not covered" >"selected" </span>: ""
               }&gt;Absent&lt;/option&gt;
               &lt;option value="Late" ${
-                record.status === "Late" ? "selected" : ""
+                record.status === "Late" ? <span class="branch-0 cbranch-no" title="branch not covered" >"selected" </span>: ""
               }&gt;Late&lt;/option&gt;
             &lt;/select&gt;
           &lt;/td&gt;
         `;
-<span class="cstat-no" title="statement not covered" >        tableBody.appendChild(row);</span>
+        tableBody.appendChild(row);
       });
     })
-    .catch((error) =&gt; console.error("Error loading attendance:", error));
+    .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >console.error("Error loading attendance:", error))</span>;
 }
 &nbsp;
 // Function to update attendance status
-function <span class="fstat-no" title="function not covered" >updateStatus(</span>attendanceID, newStatus) {
-<span class="cstat-no" title="statement not covered" >  fetch(`/api/edit-attendance/${attendanceID}`, {</span>
+function updateStatus(attendanceID, newStatus) {
+  fetch(`/api/edit-attendance/${attendanceID}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status: newStatus }),
   })
-    .then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
-    .then(<span class="fstat-no" title="function not covered" >(u</span>pdatedRecord) =&gt; {
-<span class="cstat-no" title="statement not covered" >      console.log("Updated attendance:", updatedRecord);</span>
+    .then((response) =&gt; response.json())
+    .then((updatedRecord) =&gt; {
+      console.log("Updated attendance:", updatedRecord);
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; <span class="cstat-no" title="statement not covered" >console.error("Error updating attendance:", error))</span>;
 }
@@ -273,11 +271,13 @@ function goToHomePage() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-<<<<<<< HEAD
                 at 2025-01-12T11:58:33.796Z
 =======
                 at 2025-01-12T06:34:48.507Z
 >>>>>>> parent of 2f03e2d7 (Frontend test working)
+=======
+                at 2025-01-12T08:29:25.838Z
+>>>>>>> parent of 70d1cdd7 (Save local changes before merge)
             </div>
         <script src="prettify.js"></script>
         <script>
