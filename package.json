@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.13.10",
-    "nyc": "^15.1.0",
-    "rimraf": "^6.0.1"
+    "nyc": "^15.1.0"
   }
 }
