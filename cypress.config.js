@@ -6,7 +6,6 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       require("@cypress/code-coverage/task")(on, config);
-
       on("task", {
         startServer() {
           return new Promise((resolve, reject) => {

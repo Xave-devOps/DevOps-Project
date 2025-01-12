@@ -19,7 +19,7 @@
       </select>
 
       <label for="dateSelect">Select Date:</label>
-      <input type="date" id="dateSelect" onchange="loadAttendance()">
+      <input type="date" id="dateSelect" value="2025-01-01" onchange="loadAttendance()">
     </div>
 
     <table id="attendanceTable">
@@ -35,7 +35,7 @@
         <!-- Attendance records will be dynamically inserted here -->
       </tbody>
     </table>
+    <button id="updateAttendance" onclick="goToHomePage()">Update Attendance</button>
   </div>
-  <button id="updateAttendanceButton" onclick="goToHomePage()">Update Attendance</button>
 </body>
 </html>

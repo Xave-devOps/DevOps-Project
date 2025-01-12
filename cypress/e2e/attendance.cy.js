@@ -34,7 +34,6 @@ describe("attendance frontend", () => {
           .select("Present") // Select "Present" as an example
           .should("have.value", "Present"); // Assert the value is updated to "Present"
       });
-
     cy.get("#attendanceTable tbody tr")
       .first()
       .find("td")
