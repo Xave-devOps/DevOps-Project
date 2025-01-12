@@ -1,6 +1,6 @@
 {
-  "C:\\Devops folder (no OneDrive)\\DevOps-Project\\public\\js\\attendance.js": {
-    "path": "C:\\Devops folder (no OneDrive)\\DevOps-Project\\public\\js\\attendance.js",
+  "C:\\Users\\ajxia\\OneDrive\\Desktop\\Documents\\DVOPS_Projects\\DVOPS_Project\\DevOps-Project\\public\\js\\attendance.js": {
+    "path": "C:\\Users\\ajxia\\OneDrive\\Desktop\\Documents\\DVOPS_Projects\\DVOPS_Project\\DevOps-Project\\public\\js\\attendance.js",
     "statementMap": {
       "0": {
         "start": {
@@ -620,22 +620,22 @@
       }
     },
     "s": {
-      "0": 5,
-      "1": 5,
-      "2": 8,
-      "3": 8,
-      "4": 8,
-      "5": 1,
-      "6": 1,
-      "7": 7,
-      "8": 7,
-      "9": 7,
-      "10": 7,
-      "11": 7,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 7,
+      "0": 4,
+      "1": 4,
+      "2": 7,
+      "3": 7,
+      "4": 7,
+      "5": 5,
+      "6": 5,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 8,
+      "13": 8,
+      "14": 8,
+      "15": 0,
       "16": 0,
       "17": 0,
       "18": 0,
@@ -643,12 +643,12 @@
       "20": 1
     },
     "f": {
-      "0": 5,
-      "1": 8,
-      "2": 7,
-      "3": 7,
-      "4": 0,
-      "5": 7,
+      "0": 4,
+      "1": 7,
+      "2": 2,
+      "3": 2,
+      "4": 8,
+      "5": 0,
       "6": 0,
       "7": 0,
       "8": 0,
@@ -657,23 +657,23 @@
     },
     "b": {
       "0": [
-        1,
-        7
+        5,
+        2
       ],
       "1": [
-        0,
-        0
+        6,
+        2
       ],
       "2": [
         0,
         0
       ],
       "3": [
-        0,
-        0
+        2,
+        6
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d0f73bdc0952ef653ffa78a6d78b0f344ff62218"
+    "hash": "2ed4fd6abf72269834cf283a883a33c52e9505e3"
   }
 }

@@ -9,3 +9,4 @@ node_modules
 .nyc_output/
 # Ignore coverage folder
 coverage/
+d7 (Frontend test working)

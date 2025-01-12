@@ -23,8 +23,14 @@
     "mocha": "^10.8.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "find-cache-dir": "^5.0.0",
     "nyc": "^17.1.0",
     "sinon": "^19.0.2"
+=======
+    "@cypress/code-coverage": "^3.13.10",
+    "nyc": "^15.1.0",
+    "rimraf": "^6.0.1"
+>>>>>>> parent of 2f03e2d7 (Frontend test working)
   }
 }

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1736683113270" clover="3.2.0">
-  <project timestamp="1736683113271" name="All files">
-    <metrics statements="21" coveredstatements="14" conditionals="8" coveredconditionals="2" methods="11" coveredmethods="6" elements="40" coveredelements="22" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
-    <file name="attendance.js" path="C:\Devops folder (no OneDrive)\DevOps-Project\public\js\attendance.js">
-      <metrics statements="21" coveredstatements="14" conditionals="8" coveredconditionals="2" methods="11" coveredmethods="6"/>
-      <line num="1" count="5" type="stmt"/>
-      <line num="2" count="5" type="stmt"/>
-      <line num="7" count="8" type="stmt"/>
-      <line num="8" count="8" type="stmt"/>
-      <line num="11" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="16" count="7" type="stmt"/>
-      <line num="17" count="7" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
-      <line num="20" count="7" type="stmt"/>
-      <line num="22" count="7" type="stmt"/>
-      <line num="23" count="0" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
-      <line num="43" count="0" type="stmt"/>
-      <line num="46" count="7" type="stmt"/>
+<coverage generated="1736666883656" clover="3.2.0">
+  <project timestamp="1736666883656" name="All files">
+    <metrics statements="21" coveredstatements="16" conditionals="8" coveredconditionals="7" methods="11" coveredmethods="6" elements="40" coveredelements="29" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
+    <file name="attendance.js" path="C:\Users\ajxia\OneDrive\Desktop\Documents\DVOPS_Projects\DVOPS_Project\DevOps-Project\public\js\attendance.js">
+      <metrics statements="21" coveredstatements="16" conditionals="8" coveredconditionals="7" methods="11" coveredmethods="6"/>
+      <line num="1" count="4" type="stmt"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="7" count="7" type="stmt"/>
+      <line num="8" count="7" type="stmt"/>
+      <line num="11" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="5" type="stmt"/>
+      <line num="13" count="5" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="23" count="8" type="stmt"/>
+      <line num="25" count="8" type="stmt"/>
+      <line num="43" count="8" type="stmt"/>
+      <line num="46" count="0" type="stmt"/>
       <line num="51" count="0" type="stmt"/>
       <line num="56" count="0" type="stmt"/>
       <line num="58" count="0" type="stmt"/>
