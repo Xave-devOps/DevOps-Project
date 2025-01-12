@@ -39,7 +39,7 @@ const updateAttendanceStatus = async (req, res) => {
 
   // Check if attendanceID is a valid number
   if (isNaN(attendanceID)) {
-    return res.status(400).json({ error: "Invalid attendanceID!" });
+    return res.status(400).json({ error: "Invalid attendanceID" });
   }
 
   // Check if status is provided, if not return a 400 error
