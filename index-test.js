@@ -3,16 +3,18 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 const cors = require("cors");
+var startPage = "index.html";
+
 
 const app = express();
-const PORT = process.env.PORT || 5050;  
+const PORT = process.env.PORT || 5050;
 const dbPath = path.join(__dirname, "utils/db.json");
 
 // Middleware setup
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static("./instrumented"));
 
 const {
   updateAttendanceStatus,
@@ -37,12 +39,16 @@ app.get("/data/db.json", (req, res) => {
 });
 
 // Import and use the create student route
-const createStudentRoute = require("./Util/createStudent");
+const createStudentRoute = require("./util/createStudent");
 app.use("/", createStudentRoute);
 
 // Default route to serve the main HTML file
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(__dirname + "/instrumented/" + startPage);
+});
+
+app.get("/coverage", (req, res) => {
+  res.sendFile(path.join(__dirname, "coverage", "index.html")); // Example path for coverage report
 });
 
 // Start the server
