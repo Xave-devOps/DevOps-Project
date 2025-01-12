@@ -18,7 +18,7 @@ jobs:
           node-version: 18
 
       - name: Remove existing node_modules folder from cloned project
-        run: rm -rf /home/runner/work/resource-mgmt/resource-mgmt/node_modules/*
+        run: rm -rf /home/runner/work/DevOps-Project/DevOps-Project/node_modules/*
 
       - name: Install dependencies based on package.json
         run: npm install
