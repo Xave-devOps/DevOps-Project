@@ -3,7 +3,7 @@ name: Automatic Testing for Student Management Web App
 on:
   push:
     branches:
-      - main # Workflow will be triggered whenever there is a push in main branch
+      - final-branch # Workflow will be triggered whenever there is a push in final branch
 
 jobs:
   test:
