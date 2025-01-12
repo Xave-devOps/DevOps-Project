@@ -19,25 +19,23 @@ function loadAttendance() {
       const tableBody = document.getElementById("attendanceBody");
       tableBody.innerHTML = "";
 
-      attendance.forEach((attendance) => {
+      attendance.forEach((record) => {
         const row = document.createElement("tr");
 
         row.innerHTML = `
-          <td>${attendance.studentID}</td>
-          <td>${attendance.name}</td>
-          <td>${attendance.status}</td>
+          <td>${record.studentID}</td>
+          <td>${record.name}</td>
+          <td>${record.status}</td>
           <td>
-            <select onchange="updateStatus(${
-              attendance.attendanceID
-            }, this.value)">
+            <select onchange="updateStatus(${record.attendanceID}, this.value)">
               <option value="Present" ${
-                attendance.status === "Present" ? "selected" : ""
+                record.status === "Present" ? "selected" : ""
               }>Present</option>
               <option value="Absent" ${
-                attendance.status === "Absent" ? "selected" : ""
+                record.status === "Absent" ? "selected" : ""
               }>Absent</option>
               <option value="Late" ${
-                attendance.status === "Late" ? "selected" : ""
+                record.status === "Late" ? "selected" : ""
               }>Late</option>
             </select>
           </td>
@@ -56,15 +54,10 @@ function updateStatus(attendanceID, newStatus) {
     body: JSON.stringify({ status: newStatus }),
   })
     .then((response) => response.json())
-    .then((newStatus) => {
-      console.log("Updated attendance:", newStatus);
+    .then((updatedRecord) => {
+      console.log("Updated attendance:", updatedRecord);
     })
     .catch((error) => console.error("Error updating attendance:", error));
-}
-
-function refreshAttendance() {
-  // Reloads the page to show updated attendance data
-  location.reload();
 }
 
 function goToHomePage() {

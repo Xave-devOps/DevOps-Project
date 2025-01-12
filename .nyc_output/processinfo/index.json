@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"processes":{"5ce4743f-82f8-45ed-a6c9-5a3b4e103f02":{"parent":"931fcb90-a239-430f-a73b-4f826bacb6dc","children":["6b37c7f8-3ab0-4dd8-9b8c-40d8610953ed"]},"6b37c7f8-3ab0-4dd8-9b8c-40d8610953ed":{"parent":"5ce4743f-82f8-45ed-a6c9-5a3b4e103f02","children":[]},"931fcb90-a239-430f-a73b-4f826bacb6dc":{"parent":null,"children":["5ce4743f-82f8-45ed-a6c9-5a3b4e103f02"]}},"files":{},"externalIds":{}}
-=======
-{"processes":{"8ec2e398-6200-4ef9-8167-03858cf7b99c":{"parent":null,"children":[]}},"files":{"C:\\Devops folder (no OneDrive)\\DevOps-Project\\utils\\ResourceUtil.js":["8ec2e398-6200-4ef9-8167-03858cf7b99c"]},"externalIds":{}}
->>>>>>> final-branch
+{"processes":{"31174756-37c2-4293-88e9-ab17df0cfcc1":{"parent":"8dbe3b8a-722f-424e-bed1-31c3aaf9c957","children":["a4134793-a0c0-4586-8040-94ca70785b88"]},"8dbe3b8a-722f-424e-bed1-31c3aaf9c957":{"parent":null,"children":["31174756-37c2-4293-88e9-ab17df0cfcc1"]},"a4134793-a0c0-4586-8040-94ca70785b88":{"parent":"31174756-37c2-4293-88e9-ab17df0cfcc1","children":[]}},"files":{},"externalIds":{}}
