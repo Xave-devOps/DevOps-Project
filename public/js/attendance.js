@@ -62,6 +62,13 @@ function updateStatus(attendanceID, newStatus) {
     .catch((error) => console.error("Error updating attendance:", error));
 }
 
+
+function refreshAttendance() {
+  // Reloads the page to show updated attendance data
+  location.reload();
+}
+
+
 function goToHomePage() {
   // Redirects to the homepage (index.html)
   window.location.href = "index.html";
