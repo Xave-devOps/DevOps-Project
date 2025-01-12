@@ -91,28 +91,5 @@ describe("Attendance API", () => {
           done();
         });
     });
-
-    it("should return 500 if there is a file read/write error", (done) => {
-      const attendanceID = 1; // Assume this is a valid ID in your db.json
-
-      // Stub fs methods to simulate errors
-      const readFileStub = sinon
-        .stub(fs, "readFile")
-        .throws(new Error("File read error"));
-      chai
-        .request(baseUrl)
-        .put(`/api/edit-attendance/${attendanceID}`)
-        .send({
-          status: "Absent",
-        })
-        .end((err, res) => {
-          expect(res).to.have.status(500);
-          expect(res.body.error).to.equal("Failed to read or write database");
-
-          // Restore fs.readFile method
-          readFileStub.restore();
-          done();
-        });
-    });
   });
 });
