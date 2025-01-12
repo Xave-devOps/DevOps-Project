@@ -2,7 +2,7 @@ const fs = require("fs").promises; // Use promises API for async file handling
 const path = require("path");
 
 // Path to your db.json file
-const dbPath = path.join(__dirname, "db.json");
+const dbPath = path.join(__dirname, "../utils/db.json");
 
 // Utility function to read JSON file asynchronously
 async function readJSON(filename) {

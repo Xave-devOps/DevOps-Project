@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 5050;  
+const PORT = process.env.PORT || 5050;
 const dbPath = path.join(__dirname, "utils/db.json");
 
 // Middleware setup
