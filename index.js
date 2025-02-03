@@ -7,6 +7,7 @@ const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5050;
 const dbPath = path.join(__dirname, "utils/db.json");
+const logger = require("./logger");
 
 // Middleware setup
 app.use(cors());
@@ -45,11 +46,18 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+const statusMonitor = require("express-status-monitor");
+app.use(statusMonitor());
+
 // Start the server
 const server = app.listen(PORT, () => {
   console.log(
     `Student Management System is running at http://localhost:${PORT}`
   );
+  logger.info(
+    `Student Management System is running at http://localhost:${PORT}`
+  );
+  logger.error(`Example or error log`);
 });
 
 module.exports = { app, server };
