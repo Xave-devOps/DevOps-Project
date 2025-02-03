@@ -24,8 +24,8 @@ app.get("/api/view-attendance/:lessonID", getAttendanceByLesson);
 app.put("/api/edit-attendance/:attendanceID", updateAttendanceStatus);
 
 // Import leave application routes from leaveapp.js
-const leaveAppRoutes = require("./util/leaveapp");
-app.use("/leave", leaveAppRoutes);
+//const leaveAppRoutes = require("./util/leaveapp");
+//app.use("/leave", leaveAppRoutes);
 
 // Serve search.js from the util directory
 app.get("/util/search.js", (req, res) => {

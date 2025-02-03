@@ -2,3 +2,7 @@ info: Student Management System is running at http://localhost:5050 {"timestamp"
 error: Example or error log {"timestamp":"2025-02-03T08:52:39.126Z"}
 info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-03T09:31:55.093Z"}
 error: Example or error log {"timestamp":"2025-02-03T09:31:55.109Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-03T09:59:30.862Z"}
+error: Example or error log {"timestamp":"2025-02-03T09:59:30.864Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-03T10:11:20.803Z"}
+error: Example or error log {"timestamp":"2025-02-03T10:11:20.821Z"}
