@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: xavedocker/rms-docker-image:v4
+    image: xavedocker/rms-docker-image:v5
     container_name: rms-docker-container
     ports:
       - "8000:5050"
