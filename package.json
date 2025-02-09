@@ -21,6 +21,7 @@
     "fs": "^0.0.1-security",
     "mocha": "^10.7.3",
     "pm2": "^5.4.3",
+    "pm2-server-monit": "^3.0.0",
     "winston": "^3.17.0"
   },
   "devDependencies": {

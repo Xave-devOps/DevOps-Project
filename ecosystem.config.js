@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "tp-sms", // Name of your application
       script: "index.js", // Your main server file (change if necessary)
-      instances: "max", // Run as many instances as CPU cores
+      instances: "5", // Run as many instances as CPU cores
       exec_mode: "cluster", // Enable multi-threading for performance
       autorestart: true, // Restart on crash
       watch: false, // Disable file watching (handled by CI/CD)
