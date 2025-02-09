@@ -242,3 +242,33 @@ error: Example or error log {"timestamp":"2025-02-09T11:05:22.948Z"}
 error: Example or error log {"timestamp":"2025-02-09T11:05:22.949Z"}
 info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T11:05:23.056Z"}
 error: Example or error log {"timestamp":"2025-02-09T11:05:23.060Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T15:52:04.508Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T15:52:04.507Z"}
+error: Example or error log {"timestamp":"2025-02-09T15:52:04.514Z"}
+error: Example or error log {"timestamp":"2025-02-09T15:52:04.514Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T15:52:04.509Z"}
+error: Example or error log {"timestamp":"2025-02-09T15:52:04.514Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T15:52:04.512Z"}
+error: Example or error log {"timestamp":"2025-02-09T15:52:04.518Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T15:52:04.515Z"}
+error: Example or error log {"timestamp":"2025-02-09T15:52:04.527Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:20:42.311Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:20:42.311Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:20:42.315Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:20:42.312Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:20:42.316Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:20:42.316Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:20:42.313Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:20:42.317Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:20:42.978Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:20:42.984Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:29:58.276Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:29:58.288Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:29:58.289Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:29:58.281Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:29:58.299Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:29:58.300Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:29:58.303Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:29:58.311Z"}
+info: Student Management System is running at http://localhost:5050 {"timestamp":"2025-02-09T16:29:58.900Z"}
+error: Example or error log {"timestamp":"2025-02-09T16:29:58.904Z"}
